@@ -9,7 +9,7 @@ ALPHA = 0.5
 # discount factor
 GAMMA = 0.99
 # number of epochs for training
-  = 101
+EPOCHS = 101
 # maximum number of steps per epoch
 MAXIMUM_STEPS = 500
 
@@ -240,10 +240,10 @@ maze = Maze(q_table=eval(Q))    # 第一次运行将此行注释掉
 # plt.axis('off')
 # plt.show()
 # maze.training()
-"""
+""""""
 for _ in range(2000):
     print("现在在 %d" % _)
     maze.training()
 """
 maze.test()
-""""""
+"""
