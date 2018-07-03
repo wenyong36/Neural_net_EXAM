@@ -1,4 +1,4 @@
-# Neural_net_EXAM
+# Neuralnet_EXAM
 神经网络课期末试题
 
 1、手写数字分类
