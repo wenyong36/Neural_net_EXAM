@@ -1,0 +1,5 @@
+先运行input_data.py
+
+在运行matrix_generating.py
+
+最后运行convolution_learning_permutation.py
