@@ -3,3 +3,5 @@
 在运行matrix_generating.py
 
 最后运行convolution_learning_permutation.py
+
+learning_show.py是在训练中加入loss函数的可视化，因为有数据存储，训练过程较慢
