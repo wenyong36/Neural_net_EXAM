@@ -227,6 +227,22 @@ class Maze:
         for element in self.maze:
             print(element)
         print()
+    
+    def maze_path(self):
+        self.maze = deepcopy(INITIAL_MAZE)
+        aa = random.randrange(57, 0, -2)
+        bb = random.randrange(103, 0, -2)
+        self.maze[aa][bb] = 'A'
+        s = self.get_position('A')
+        steps = 0
+        path = []
+        while (s != self.final_state) and steps < MAXIMUM_STEPS:
+            steps += 1
+            self.update_maze(self.select_move(epsilon=0))
+            s = self.get_position('A')
+            path.append(s)
+
+        return path, steps
 
 
 """"""
