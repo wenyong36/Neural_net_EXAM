@@ -1,0 +1,25 @@
+import matplotlib.pyplot as plt     # plt 用于显示图片
+import matplotlib.image as mpimg    # mpimg 用于读取图片
+import numpy as np
+from scipy.misc import imsave
+import os
+import random
+from matrix_generating_jigsaw import matrix_jigsaw
+from matrix_generating_jigsaw import image_cut
+
+
+picture_all = np.zeros((530, 64, 28, 28, 3), dtype=int)
+
+rootdir = 'E:\ChromeDownload\lfw\George_W_Bush'
+list = os.listdir(rootdir)  # 列出文件夹下所有的目录与文件
+for k in range(0, len(list)):
+    path = os.path.join(rootdir, list[k])
+    pic = mpimg.imread(path)
+    pic = np.delete(pic, range(250, 223, -1), axis=0)
+    pic = np.delete(pic, range(250, 223, -1), axis=1)
+    picture_all[k] = image_cut(pic)
+    # plt.imshow(picture_all[k, 5])
+    # plt.axis('off')
+    # plt.show()
+
+np.save("picture_all.npy", picture_all)
